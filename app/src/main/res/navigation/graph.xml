@@ -7,18 +7,26 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="co.ripzery.research.MainFragment"
+        android:name="co.ripzery.research.screen.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_splashFragment"
             app:destination="@+id/splashFragment"
-            app:popUpTo="@+id/mainFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@+id/mainFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_bottomNavigationFragment"
+            app:destination="@id/bottomNavigationFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/splashFragment"
-        android:name="co.ripzery.research.SplashFragment"
+        android:name="co.ripzery.research.screen.splash.SplashFragment"
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/bottomNavigationFragment"
+        android:name="co.ripzery.research.screen.bottomnav.BottomNavigationFragment"
+        android:label="BottomNavigationFragment" />
+
 </navigation>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Research</string>
+
+    <!-- Bottom Navigation -->
+    <string name="bottom_navigation_menu_1">Favourites</string>
+    <string name="bottom_navigation_menu_2">Schedule</string>
+    <string name="bottom_navigation_menu_3">Music</string>
+
+    <!-- Main -->
+    <string name="btn_nav_to_bottom_navigation">Go to bottom navigation</string>
 </resources>

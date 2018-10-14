@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/actionSchedules">
+
+    <fragment
+        android:id="@+id/actionFavorites"
+        android:name="co.ripzery.research.screen.bottomnav.FavouriteFragment"
+        android:label="Favourite"
+        tools:layout="@layout/fragment_favourite" />
+
+    <fragment
+        android:id="@+id/actionSchedules"
+        android:name="co.ripzery.research.screen.bottomnav.ScheduleFragment"
+        android:label="Schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/actionMusic"
+        android:name="co.ripzery.research.screen.bottomnav.MusicFragment"
+        android:label="Music"
+        tools:layout="@layout/fragment_music" />
+
+
+</navigation>

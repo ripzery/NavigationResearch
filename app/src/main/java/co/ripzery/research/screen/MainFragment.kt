@@ -1,18 +1,20 @@
-package co.ripzery.research
+package co.ripzery.research.screen
 
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
-import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import co.ripzery.research.MainActivity
+import co.ripzery.research.R
 import co.ripzery.research.ext.log
 import co.ripzery.research.viewmodel.StateViewModel
+import kotlinx.android.synthetic.main.fragment_main.*
 
-class SplashFragment : Fragment() {
+class MainFragment : Fragment() {
     private lateinit var viewModel: StateViewModel
 
     override fun onAttach(context: Context?) {
@@ -26,16 +28,17 @@ class SplashFragment : Fragment() {
         viewModel = ViewModelProviders.of(activity as MainActivity)[StateViewModel::class.java]
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         log("onCreateView")
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         log("onViewCreated")
-        Handler().postDelayed({
-            findNavController().navigateUp()
-        }, 3000)
+        if (viewModel.showSplash) {
+            findNavController().navigate(R.id.action_mainFragment_to_splashFragment)
+        }
+        btnNavigate.setOnClickListener { findNavController().navigate(R.id.action_mainFragment_to_bottomNavigationFragment) }
     }
 }
