@@ -1,0 +1,25 @@
+ext {
+    versions = [
+        arch             : '1.1.1',
+        arch_nav         : '1.0.0-alpha06',
+        constraint_layout: '1.1.3',
+        support_libs     : '28.0.0'
+    ]
+
+    arch = [
+        "android.arch.lifecycle:extensions:${versions.arch}"
+    ]
+
+    arch_nav = [
+        "android.arch.navigation:navigation-fragment-ktx:${versions.arch_nav}",
+        "android.arch.navigation:navigation-ui-ktx:${versions.arch_nav}"
+    ]
+
+    constraint_layout = [
+        "com.android.support.constraint:constraint-layout:${versions.constraint_layout}"
+    ]
+
+    support_libs = [
+        "com.android.support:appcompat-v7:${versions.support_libs}"
+    ]
+}

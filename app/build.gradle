@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply from: 'gradleScript/deps.gradle'
 
 android {
     compileSdkVersion 28
@@ -25,11 +26,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     /* Support library */
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation support_libs
+    implementation constraint_layout
 
     /* Architecture component */
-    implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha06"
-    implementation "android.arch.navigation:navigation-ui-ktx:1.0.0-alpha06" // use -ktx for Kotlin
-    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation arch
+    implementation arch_nav
 }
