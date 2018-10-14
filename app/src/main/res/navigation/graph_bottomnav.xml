@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav_graph"
-    app:startDestination="@id/actionSchedules">
+    app:startDestination="@id/actionFavorites">
 
     <fragment
         android:id="@+id/actionFavorites"
         android:name="co.ripzery.research.screen.bottomnav.FavouriteFragment"
         android:label="Favourite"
-        tools:layout="@layout/fragment_favourite" />
+        tools:layout="@layout/fragment_favourite">
+        <action
+            android:id="@+id/action_actionFavorites_to_scheduleDetailFragment"
+            app:destination="@id/scheduleDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/actionSchedules"
@@ -22,6 +26,12 @@
         android:name="co.ripzery.research.screen.bottomnav.MusicFragment"
         android:label="Music"
         tools:layout="@layout/fragment_music" />
+
+    <fragment
+        android:id="@+id/scheduleDetailFragment"
+        android:name="co.ripzery.research.screen.bottomnav.detail.ScheduleDetailFragment"
+        android:label="Favourite Detail"
+        tools:layout="@layout/fragment_schedule_detail" />
 
 
 </navigation>

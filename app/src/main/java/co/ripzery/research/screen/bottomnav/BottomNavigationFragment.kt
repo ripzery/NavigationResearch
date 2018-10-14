@@ -19,7 +19,16 @@ class BottomNavigationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bottomNavigation.setupWithNavController(Navigation.findNavController(activity as MainActivity, R.id.content))
-
+        val navController = Navigation.findNavController(activity as MainActivity, R.id.content)
+        toolbar.setupWithNavController(navController)
+        bottomNavigation.setupWithNavController(navController)
+        navController.addOnNavigatedListener { _, destination ->
+            if (destination.id in arrayOf(R.id.actionSchedules, R.id.actionMusic)) {
+                toolbar.navigationIcon = null
+            }
+        }
+        fabSchedule.setOnClickListener {
+            bottomNavigation.selectedItemId = R.id.actionSchedules
+        }
     }
 }

@@ -10,7 +10,6 @@
     <item
         android:id="@+id/actionSchedules"
         android:enabled="true"
-        android:icon="@drawable/ic_access_time_white_24dp"
         android:title="@string/bottom_navigation_menu_2"
         app:showAsAction="ifRoom" />
     <item
